@@ -1,7 +1,7 @@
 ---
 title: Dirección IP
 layout: post
-post-image: /assets/images/P1/P1.jpg
+post-image: /assets/images/Post/P1/P1.png
 description: Conocer muy bien las direcciones IP es fundamental en cualquier área de la informática.
 tags: 
 - Redes
@@ -33,7 +33,7 @@ El **enrutador asigna direcciones IP privadas** a cada uno de los dispositivos e
 
 >Estas direcciones IP privadas son únicas dentro de tu red local, pero no son visibles ni accesibles desde Internet.
 
-![P1i1](/assets/images/P1/P1i1.jpg)
+![P1i1](/assets/images/Post/P1/P1i1.jpg)
 
 ---
 
@@ -50,7 +50,7 @@ Muy bien repasando el ejemplo anterior sabemos que el router es el encargado de 
 * Necesito sacar impreso un documento desde mi computadora a tráves del Wi-fi, bueno la computadora y la impresora se van a comunicar por medio de las direcciones IP privadas de esa red local.
 
 
-![P1i2](/assets/images/P1/P1i2.jpg)
+![P1i2](/assets/images/Post/P1/P1i2.jpg)
 
 
 
@@ -58,7 +58,7 @@ Pero ahora necesito enviar un documento desde mi computadora a mi profesor ¿ C�
  
 * Resumiendo desde mi computadora le envio un documento a mi profesor, el router dice "el dispositivo al que quiero enviarle no esta dentro de mi red", entonces el router con su dirección IP pública actúa como intermediario para que el documento llegue al profesor.
 
-![P1i3](/assets/images/P1/P1i3.jpg)
+![P1i3](/assets/images/Post/P1/P1i3.jpg)
 
 **Importante** las redes IP Públicas se dividen en:
 
