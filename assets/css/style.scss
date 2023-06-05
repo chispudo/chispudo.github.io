@@ -206,7 +206,7 @@ a.navbar-item.is-active {
         margin: auto auto 1rem auto;
 
         &:hover {
-            transform: scale(1.05);
+                transform: scale(1.05);
         }
     }
 
@@ -228,7 +228,7 @@ a.navbar-item.is-active {
                 color: #7a7a7a;
 
                 &:hover {
-                    color: white;
+                    color: black;
                 }
             }
 
