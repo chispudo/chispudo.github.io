@@ -62,21 +62,7 @@ Utilizamos el comando `id nombre_usuario` para que nos muestre información sobr
 useradd [opciones] <nombre_de_usuario>
 ```
 
-| Opción | Descripción |
-|--------|-------------|
-| `<nombre_de_usuario>` | Especifica el nombre del usuario que deseas crear. |
-| `-d <directorio_de_inicio>` | Especifica un directorio de inicio personalizado para el usuario. |
-| `-s <ruta_al_shell>` | Establece el shell predeterminado para el usuario. |
-| `-g <nombre_del_grupo>` | Asigna un grupo principal al usuario. |
-| `-p <contraseña_cifrada>` | Establece una contraseña cifrada para el usuario (se recomienda utilizar `passwd` para establecer la contraseña de forma segura). |
-| `-m` | Crea el directorio de inicio del usuario si no existe. |
-| `-c <comentario>` | Agrega un comentario o descripción al usuario (información de GECOS). |
-| `-e <fecha>` | Establece una fecha de vencimiento para la cuenta del usuario. |
-| `-r` | Crea un sistema de usuario o una cuenta de usuario del sistema (generalmente utilizado para cuentas del sistema). |
-| `-U` | Crea el usuario con un UID único. |
-| `-l` | Crea el usuario con un nombre de inicio de sesión (login) en minúsculas. |
-| `-k <directorio>` | Copia los archivos y directorios del esqueleto especificado al directorio de inicio del usuario. |
-
+![Opciones_useradd](/assets/images/Post/P5/Opciones_useradd.png)
 
 ---
 
@@ -98,22 +84,7 @@ Los grupos se utilizan para organizar y administrar los usuarios y sus permisos.
 
 **Sintaxis**:
 
-```Shell
-groupadd <nombre_del_grupo>
-```
-
-#### Opciones en la creación de grupos
-
-Creación de grupos en Linux, junto con las diferentes opciones.
-
-| Comando | Descripción |
-|---------|-------------|
-| `groupadd -g <GID> <namegrupo>` | Crea un grupo con un GID (identificador de grupo) específico. El GID debe ser un número no utilizado actualmente por otro grupo. Por ejemplo, `groupadd -g 1001 grupo1` creará un grupo llamado "grupo1" con un GID de 1001. |
-| `groupadd -r <namegrupo>` | Crea un grupo de sistema. Los grupos de sistema son utilizados para propósitos específicos del sistema y suelen tener GIDs bajos. |
-| `groupadd -f <namegrupo>` | Crea un grupo forzando la creación, incluso si ya existe un grupo con el mismo nombre. Esto puede ser útil si deseas sobrescribir un grupo existente. |
-| `groupmod -n <nuevo_nombre> <namegrupo>` | Cambia el nombre de un grupo existente. Por ejemplo, `groupmod -n nuevo_grupo grupo1` cambiará el nombre del grupo "grupo1" a "nuevo_grupo". |
-| `groupmod -g <nuevo_GID> <namegrupo>` | Cambia el GID de un grupo existente. Por ejemplo, `groupmod -g 1002 grupo1` cambiará el GID del grupo "grupo1" a 1002. |
-| `groupdel <namegrupo>` | Elimina un grupo existente. Por ejemplo, `groupdel grupo1` eliminará el grupo llamado "grupo1". |
+![Opciones_grupo](/assets/images/Post/P5/Opciones_grupo.png)
 
 **EJEMPLO**:
 
