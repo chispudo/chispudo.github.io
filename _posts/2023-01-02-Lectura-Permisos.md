@@ -17,7 +17,7 @@ En este post se abordarán conceptos importantes como los diferentes tipos de pe
 
 Cuando estas en el interprete de comandos generalmente para listar archivos o directorios utilizamos el comando `ls -l` este comando nos arroja una lista de los directorios y archivos del sitio de donde estes ubicado. Los permisos se muestran de la siguiente forma `-rwx-wxr-x` esto puede variar dependiendo los permisos asignados.
 A continuación una imagen de como leer los permisos de un directorio o archivo: 
-![P3i1](/assets/images/Post/P3/P3i1.jpg)
+![P3i1](/assets/images/Post/P3/P3i1.png)
 
 ---
 
@@ -25,7 +25,7 @@ A continuación una imagen de como leer los permisos de un directorio o archivo:
 
 Ahora bien ya conoces como leer los permisos de un archivo o directorio para poder intepretar mejor a que hace referencia esos permisos tenemos que revisar lo demás, con un gráfico lo entenderás mejor:
 
-![P3i2](/assets/images/Post/P3/P3i2.jpg)
+![P3i2](/assets/images/Post/P3/P3i2.png)
 
 ---
 
