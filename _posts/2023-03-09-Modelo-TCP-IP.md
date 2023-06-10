@@ -53,8 +53,31 @@ _Ejemplo del funcionamiento de la capa de aplicación_
 
 ![P8F](/assets/images/Post/P8/P8F.png)
 
----
 
 **Nota** 
-En este post solo tome en cuenta la capa de aplicación no repase a fondo el funcionamiento de cada una de las capas al momento del envío del paquete. 
+En este ejemplo solo tome en cuenta la capa de aplicación no repase a fondo el funcionamiento de cada una de las capas al momento del envío del paquete. 
+
+---
+
+# Lista de Protocolos
+
+Estos protocolos operan en la capa de aplicación del modelo TCP/IP.
+
+>Aunque los protocolos pueden diferir en su funcionamiento y características específicas, todos tienen el objetivo común de permitir la comunicación entre las aplicaciones y los usuarios finales en la capa de aplicación.
+
+
+| Protocolo | Definición |
+|-----------|------------|
+| HTTP      | Protocolo de transferencia de hipertexto utilizado para la comunicación en la web. | 
+| FTP       | Protocolo de transferencia de archivos utilizado para la transferencia de archivos entre sistemas. | 
+| SMTP      | Protocolo simple de transferencia de correo utilizado para el envío de correos electrónicos. | 
+| DNS       | Sistema de nombres de dominio utilizado para traducir nombres de dominio en direcciones IP. | 
+| SSH       | Protocolo seguro de shell utilizado para acceder de forma remota a sistemas y realizar tareas administrativas | 
+| Telnet    | Protocolo utilizado para acceder a sistemas remotos y realizar tareas de administración. | 
+| HTTPS     | Protocolo seguro de transferencia de hipertexto utilizado para la comunicación web cifrada. | 
+
+
+---
+
+
 
