@@ -13,7 +13,7 @@ tags:
 
 La capa de transporte es responsable de entregar datos de manera confiable entre dos sistemas o redes. TCP y UDP son los dos protocolos de transporte que ocurren en esta capa.
 
-![P8F](/assets/images/Post/P9/P9i1.jpg)
+![P9i1](/assets/images/Post/P9/P9i1.jpg)
 
 ## Protocolo TCP
 
@@ -32,6 +32,9 @@ Entonces el protocolo TCP:
 - Proporciona una entrega confiable de datos mediante el establecimiento de una conexión entre dos sistemas.
 - Garantiza la entrega secuencial y sin errores de los datos.
 - Utilizado en aplicaciones que requieren una entrega confiable de datos, como la transferencia de archivos, el correo electrónico y la navegación web.
+
+
+![P9i3](/assets/images/Post/P9/P9i3.jpg)
 
 ---
 
