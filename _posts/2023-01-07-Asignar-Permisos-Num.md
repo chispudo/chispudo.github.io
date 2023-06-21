@@ -1,7 +1,7 @@
 ---
 title: Asignar Permisos Método Numérico
 layout: post
-post-image: /assets/images/Post/P6/P6.png
+post-image: /assets/images/Post/P6/LINUX.jpg
 description: Comando chmod, utilizado para cambiar permisos
 
 tags:

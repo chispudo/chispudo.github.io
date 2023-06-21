@@ -1,18 +1,10 @@
 ---
 title: Dirección IP
 layout: post
-post-image: /assets/images/Post/P1/P1.png
+post-image: /assets/images/Post/P1/P1.jpg
 description: Conocer muy bien las direcciones IP es fundamental en cualquier área de la informática.
 tags: 
 - Redes
----
-
-- [Introducción](#Dirección de Protocolo de Internet (IP))
-- [IP Privada](#Dirección IP Privadas)
-- [IP Pública](#Dirección IP Pública)
-- [Conclusiones](#Conclusión)
-
-
 ---
 
 # Dirección de Protocolo de Internet (IP)
