@@ -1,7 +1,7 @@
 ---
 title: Funcionamiento Capa de Internet Modelo TCP / IP
 layout: post
-post-image: /assets/images/Post/P10/P10.png
+post-image: /assets/images/Post/P10/P10i1.jpg
 description: También llamada capa de red.
 
 tags:
@@ -17,7 +17,8 @@ tags:
 - Proporciona direccionamiento lógico en forma de direcciones IP.
 - La capa de Red o Internet proporciona conectividad entre host finales en diferentes redes, por ejemplo, fuera de la red de área local (LAN).
 
-![P10i1](/assets/images/Post/P10/P10i1.jpg)
+![P10i1](/assets/images/Post/P10/Capas.png)
+
 
 ---
 

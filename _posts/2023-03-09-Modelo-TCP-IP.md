@@ -1,7 +1,7 @@
 ---
 title: Funcionamiento Capa de Aplicación Modelo TCP / IP
 layout: post
-post-image: /assets/images/Post/P8/P8F.png
+post-image: /assets/images/Post/P8/Capas.jpg
 description: Modelo utilizado en la enrutación de datos.
 
 tags:
@@ -9,14 +9,9 @@ tags:
 
 ---
 
----
-
 # Definición Capa de Aplicación
 
-![P8F](/assets/images/Post/P8/LayerApp.jpg)
-
 Se encarga de brindar servicios y facilitar el intercambio de datos entre las aplicaciones que se ejecutan en diferentes dispositivos a través de una red. Esta capa incluye los protocolos utilizados por la mayoría de las aplicaciones para proporcionar servicios a los usuarios y permitir la comunicación entre las aplicaciones.
-
 
 
 | Capa                | Función                                                         | Ejemplos de protocolos                                   |
@@ -25,6 +20,9 @@ Se encarga de brindar servicios y facilitar el intercambio de datos entre las ap
 | Capa de Transporte  | Entrega confiable y sin errores de datos entre sistemas finales. | TCP, UDP                                                |
 | Capa de Internet    | Enrutamiento y direccionamiento de los datos en la red.          | IP, ICMP, ARP                                           |
 | Capa de Acceso a la Red | Transmisión física de los datos a través del medio de comunicación. | Ethernet, Wi-Fi, PPP, DSL, ATM, SONET, Frame Relay     |
+
+
+![P8F](/assets/images/Post/P8/Capas.png)
 
 
 ---

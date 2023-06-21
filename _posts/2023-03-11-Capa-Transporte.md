@@ -1,7 +1,7 @@
 ---
 title: Funcionamiento Capa de Transporte Modelo TCP / IP
 layout: post
-post-image: /assets/images/Post/P9/P9.jpg	
+post-image: /assets/images/Post/P9/P9i1.jpg	
 description: Modelo utilizado en la enrutación de datos.
 
 tags:
@@ -13,7 +13,7 @@ tags:
 
 La capa de transporte es responsable de entregar datos de manera confiable entre dos sistemas o redes. TCP y UDP son los dos protocolos de transporte que ocurren en esta capa.
 
-![P9i1](/assets/images/Post/P9/P9i1.jpg)
+![P9i1](/assets/images/Post/P9/Capas.png)
 
 ## Protocolo TCP
 
