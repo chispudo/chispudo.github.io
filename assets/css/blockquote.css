@@ -1,0 +1,6 @@
+blockquote {
+  blockquote-color: #33C7DE; /* Reemplaza el valor con el color deseado */
+  color: #008019; /* Reemplaza el valor con el color deseado para el texto */
+  border-left: 4px solid #33C7DE; /* Reemplaza el valor con el color deseado para el borde izquierdo */
+  padding: 10px; /* Ajusta el espaciado interno según sea necesario */
+}

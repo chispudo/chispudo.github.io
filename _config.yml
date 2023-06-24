@@ -1,6 +1,11 @@
 # WhatATheme
 markdown: kramdown
 
+#Desabilitar
+#kramdown:
+ # syntax_highlighter_opts:
+  #  disable: true
+
 # URL of the Site
 url: ''
 # Base URL of the Site (i.e., Name of the Repository in which the Site is hosted)
