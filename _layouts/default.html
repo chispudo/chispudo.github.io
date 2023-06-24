@@ -14,10 +14,17 @@ layout: compress
   <!--Footer begins here-->
   {% include footer.html %}
 </body>
+<script src="{{ site.baseurl }}/assets/codigo/highlight.min.js"></script>
 <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+  });
+
   var navItems = document.getElementsByClassName('navbar-item');
   var heroes = document.getElementsByClassName('hero');
-  const viewOffset = 200; 
+  const viewOffset = 200;
 
   window.addEventListener("scroll", function (event) {
     var scroll = this.scrollY;
@@ -28,8 +35,8 @@ layout: compress
     }
 
     for (var i = 0; i < heroes.length; i++) {
-        var sectionTop = heroes[i].offsetTop-viewOffset;
-        var sectionBottom = heroes[i].offsetTop + heroes[i].offsetHeight-viewOffset;
+        var sectionTop = heroes[i].offsetTop - viewOffset;
+        var sectionBottom = heroes[i].offsetTop + heroes[i].offsetHeight - viewOffset;
 
         if (scroll >= sectionTop && scroll < sectionBottom) {
           navItems[i+1].classList.add('is-active');
@@ -39,3 +46,4 @@ layout: compress
 </script>
 
 </html>
+
