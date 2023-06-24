@@ -17,12 +17,12 @@ En Linux, los usuarios son cuentas que se utilizan para identificar y autenticar
 
 La información proporcionada por los identificadores de usuario (UID), identificadores de grupo (GID) y la lista de grupos a los que pertenece un usuario es importante.
 
-```Shel
+```shell
 id user
 ```
 Salida:
 
-```Shell
+```shell
 uid=1001(user) gid=1004(user) grupos=1004(user)
 ```
 
@@ -58,7 +58,7 @@ Utilizamos el comando `id nombre_usuario` para que nos muestre información sobr
 
 **Sintaxis**
 
-```Shell
+```shell
 useradd [opciones] <nombre_de_usuario>
 ```
 
@@ -103,7 +103,7 @@ Permite modificar las propiedades de un usuario existente.
 
 **Sintaxis básica**:
 
-```Shell
+```shell
 usermod [opciones] <nombre_de_usuario>
 ```
 

@@ -36,17 +36,18 @@ Bueno ahora quiero asignar estos permisos:
 
 **Entonces** queda así:
 
-```Shell
+```shell
 rwx rw- r-x
 111 110 101
 ```
 **Ahora** les asignamos la posición de derecha a izquierda 0, 1, 2: 
 
-```Shell
+```shell
 Permisos: rwx rw- r-x
 Caracter: 111 110 101
 Posición: 210 210 210
 ```
+- 
 
 **Fórmula**: `2^Posición`
 - Si tiene un 1 la sección de carácter usamos la fórmula.
@@ -74,7 +75,7 @@ Posición: 210 210 210
 
 Como podemos observar el resultado:
 
-```Shell
+```shell
 Antes:   rwxr-xrw-
 Después: rwxrw-r-x
 ``` 
