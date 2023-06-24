@@ -20,16 +20,16 @@
 a.navbar-item:hover,
 .navbar-link:hover {
     background-color: rgba($color: #fff, $alpha: 0.25) !important;
-    color: white !important;
+    color: green !important;
 }
 
 a.navbar-item.is-active {
     background-color: rgba($color: #fff, $alpha: 0.25) !important;
-    color: white !important;
+    color: green !important;
 
     &:hover {
         background-color: rgba($color: #fff, $alpha: 0.25) !important;
-        color: grey;
+        color: blue;
     }
 }
 
@@ -182,7 +182,7 @@ a.navbar-item.is-active {
 
         &::placeholder {
             font-weight: 500;
-            color: grey;
+            color: green;
             letter-spacing: 0.25rem;
         }
     }
@@ -252,7 +252,7 @@ a.navbar-item.is-active {
         a {
             text-decoration: underline;
             font-weight: bolder;
-            color: white;
+            color: grey;
         }
     }
 }
@@ -321,7 +321,7 @@ a.navbar-item.is-active {
             display: inline-block;
         }
         hr{
-            background-color: grey;
+            background-color: green;
         }
         img, iframe {
             max-width: calc(100% - 25vw);
