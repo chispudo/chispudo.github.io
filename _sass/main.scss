@@ -6,12 +6,11 @@
 
 html,
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     scroll-behavior: smooth !important;
     transition: all 0.25s ease;
+    color: #D0CFCC;
 }
-
-
 
 /* width */
 ::-webkit-scrollbar {
@@ -34,7 +33,7 @@ body {
 }
 
 ::placeholder {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 #navbar {
@@ -73,3 +72,5 @@ hr {
         }
     }
 }
+
+
