@@ -5,7 +5,11 @@ post-image: /assets/images/Post/P12/P12i1.jpg
 description: Capa de acceso a la red la encargada del envío y recepción
 
 tags:
-- Redes
+- Red
+
+---
+
+Garantiza que los paquetes lleguen en secuencia y sin errores, al intercambiar la confirmación de la recepción de los datos y retransmitir los paquetes perdidos.
 
 ---
 

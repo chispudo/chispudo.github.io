@@ -1,0 +1,55 @@
+---
+title: Bash Scripting
+layout: post
+post-image: /assets/images/Post/P16/P16.jpg
+description: Conocer el funcionamiento de Scripts en bash es importante para automatizar tareas.
+
+tags:
+- linux
+- Scripting
+
+---
+
+En este post trató de hacer una guia sobre la creación de scripts en linux, configuraciones y mucha práctica.
+
+---
+
+# Introducción
+
+Es un archivo `.sh` que tiene como objetivo automatizar tareas o conseguir objetivos que un solo comando no puede. Por lo general un script debe de contener instrucciones que entienda el intérprete de comandos (bash, zsh, etc).
+Además el archivo tiene que tener permisos de ejecución `chmod +x`.
+
+[Chmod modificación de permisos](https://chispudo.github.io/blog/Chmod)
+
+---
+
+### Estructura de un script
+
+Si tienes como **shell** una bash utiliza esto en la primera línea del script:
+
+```shell
+#!/bin/bash
+```
+
+- Si posees otro **shell** distinto a bash utiliza esto al principio del script:
+
+```shell
+#!/usr/bin/env bash
+```
+.
+
+> Esto indica la ruta donde esté bash para ejecutar el script
+
+---
+
+### Primer Script
+
+```shell
+#!/usr/bin/env bash
+#Este script imprime la frase HOLA MUNDO por pantalla
+
+echo HOLA MUNDO
+```
+---
+
+

@@ -5,6 +5,7 @@ post-image: /assets/images/Post/P8/Capas.jpg
 description: Modelo utilizado en la enrutación de datos.
 
 tags:
+
 - Redes
 
 ---
