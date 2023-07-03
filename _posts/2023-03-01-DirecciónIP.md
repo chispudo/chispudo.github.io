@@ -4,7 +4,8 @@ layout: post
 post-image: /assets/images/Post/P1/P1.jpg
 description: Conocer muy bien las direcciones IP es fundamental en cualquier área de la informática.
 tags: 
-- Redes
+- REDES
+
 ---
 
 # Dirección de Protocolo de Internet (IP)

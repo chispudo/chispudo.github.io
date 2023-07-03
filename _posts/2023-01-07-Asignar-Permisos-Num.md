@@ -5,7 +5,8 @@ post-image: /assets/images/Post/P6/LINUX.jpg
 description: Comando chmod, utilizado para cambiar permisos
 
 tags:
-- linux
+- LINUX
+- PERMISOS
 
 ---
 

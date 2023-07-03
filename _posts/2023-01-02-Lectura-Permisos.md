@@ -5,7 +5,8 @@ post-image: "/assets/images/Post/P3/P3.jpg"
 description: En linux la lectura e interpretación de permisos es una parte fundamental.
 
 tags: 
-- Linux
+- LINUX
+- PERMISOS
 
 ---
 

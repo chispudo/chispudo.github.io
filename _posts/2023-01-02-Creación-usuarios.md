@@ -5,7 +5,7 @@ post-image: "/assets/images/Post/P5/P5.jpg"
 description: Creación de usuarios y grupos en linux
 
 tags:
-- Linux
+- LINUX
 
 ---
 

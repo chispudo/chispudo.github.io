@@ -6,7 +6,7 @@
 
 html,
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Varela Round', sans-serif;
     scroll-behavior: smooth !important;
     transition: all 0.25s ease;
     color: #D0CFCC;
@@ -47,6 +47,7 @@ body {
 
 .is-active {
     font-weight: bold;
+    color: green;
 }
 
 .columns {

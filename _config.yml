@@ -44,7 +44,7 @@ github_username:  Gmichet
 google-analytics: UA-163806439-1
 
 # Disqus
-disqus-shortname: thedevslot
+disqus-shortname: Gmichet
 
 # Name of the Author
 author-name: Gmichet
@@ -64,6 +64,10 @@ sass:
 plugins:
   - jekyll-admin
   - jekyll-feed
+
+# Configuración de búsqueda
+search_enabled: true
+search_scope_options: [all, title, categories, tags]
 
 # Permalink
 permalink: "blog/:title"

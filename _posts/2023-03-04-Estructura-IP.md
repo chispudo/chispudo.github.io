@@ -3,9 +3,8 @@ title: Estructura de una dirección IPv4
 layout: post
 post-image: /assets/images/Post/P11/P11i1.jpg
 description: Conocer como se compone una dirección IP es importante
-
 tags:
-- Redes
+- REDES
 
 ---
 

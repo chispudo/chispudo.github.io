@@ -5,7 +5,8 @@ post-image: /assets/images/Post/P16/P16.jpg
 description: Un vistazo a los permiso Sticky Bit
 
 tags:
-- linux
+- LINUX
+- PERMISOS
 
 ---
 
