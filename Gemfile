@@ -9,6 +9,7 @@ source "http://rubygems.org"
 # Happy Jekylling!
 
 gem "jekyll"
+gem "jekyll-tagging"
 gem "rack"
 gem "webrick"
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and

@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<div class="taglist">
+  <h1>Etiquetas</h1>
+  <ul>
+    {% for tag in site.tags %}
+      <li>
+        <a href="{{ '/tags/' | relative_url }}{{ tag | first | slugify }}">{{ tag | first }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+

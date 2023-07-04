@@ -64,6 +64,7 @@ sass:
 plugins:
   - jekyll-admin
   - jekyll-feed
+  - jekyll/tagging
 
 # Configuración de búsqueda
 search_enabled: true
