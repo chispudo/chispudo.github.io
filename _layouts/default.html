@@ -4,7 +4,13 @@ layout: compress
 
 <!DOCTYPE html>
 <html>
-{% include head.html %}
+<head>
+  {% include head.html %}
+  <!-- Agrega aquí tus enlaces de CSS, como el de Bootstrap -->
+  <link rel="stylesheet" href="assets/Bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/Bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Otros enlaces de CSS -->
+</head>
 
 <body>
   {% include navbar.html %}
@@ -13,37 +19,38 @@ layout: compress
   {% include contact.html %}
   <!--Footer begins here-->
   {% include footer.html %}
-</body>
-<script src="{{ site.baseurl }}/assets/highlightjs/highlight.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('pre code').forEach((block) => {
-      hljs.highlightBlock(block);
+
+  <script src="{{ site.baseurl }}/assets/highlightjs/highlight.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
     });
-  });
 
-  var navItems = document.getElementsByClassName('navbar-item');
-  var heroes = document.getElementsByClassName('hero');
-  const viewOffset = 200;
+    var navItems = document.getElementsByClassName('navbar-item');
+    var heroes = document.getElementsByClassName('hero');
+    const viewOffset = 200;
 
-  window.addEventListener("scroll", function (event) {
-    var scroll = this.scrollY;
-    var position = window.pageYOffset;
+    window.addEventListener("scroll", function (event) {
+      var scroll = this.scrollY;
+      var position = window.pageYOffset;
 
-    for (var i = 0; i < navItems.length; i++) {
-      navItems[i].classList.remove('is-active');
-    }
-
-    for (var i = 0; i < heroes.length; i++) {
-        var sectionTop = heroes[i].offsetTop - viewOffset;
-        var sectionBottom = heroes[i].offsetTop + heroes[i].offsetHeight - viewOffset;
-
-        if (scroll >= sectionTop && scroll < sectionBottom) {
-          navItems[i+1].classList.add('is-active');
+      for (var i = 0; i < navItems.length; i++) {
+        navItems[i].classList.remove('is-active');
       }
-    }
-  });
-</script>
 
+      for (var i = 0; i < heroes.length; i++) {
+          var sectionTop = heroes[i].offsetTop - viewOffset;
+          var sectionBottom = heroes[i].offsetTop + heroes[i].offsetHeight - viewOffset;
+
+          if (scroll >= sectionTop && scroll < sectionBottom) {
+            navItems[i+1].classList.add('is-active');
+        }
+      }
+    });
+  </script>
+</body>
 </html>
+
 
