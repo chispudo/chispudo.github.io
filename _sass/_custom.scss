@@ -13,6 +13,45 @@ strong {
   padding-left: 5%; /* Añade un espacio en blanco a la izquierda */
   padding-right: 25%; /* Añade un espacio en blanco a la derecha */
 }
+.table-tags {
+  width: 80%;
+  max-width: 800px; /* Ajusta el ancho máximo deseado */
+  margin: 50px auto; /* Ajusta los márgenes superiores e inferiores y el valor "auto" para centrar la tabla horizontalmente */
+  border-collapse: collapse;
+}
+.table-tags th {
+  background-color: #222222;
+  color: #FFFFFF;
+  padding: 15px;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 2px solid #FFFFFF;
+}
+.table-tags td {
+  padding: 15px;
+  border-bottom: 1px solid #333333;
+}
+.table-tags tr:nth-child(even) {
+  background-color: #111111;
+}
+.table-tags tr:hover {
+  background-color: #333333;
+}
+.table-tags a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.table-tags a:hover {
+  text-decoration: underline;
+}
+.table-tags {
+  margin-bottom: 0; /* Ajusta el margen inferior a 0 */
+}
+
+
+
+
+
 
 
 
