@@ -5,11 +5,25 @@ title: Etiquetas
 
 <!DOCTYPE html>
 <html>
-{% include head.html %}
+
+<head>
+  {% include head.html %}
+  
+  <style>
+    /* Estilo de los títulos */
+    h2 {
+      font-size: 24px; /* Tamaño de fuente */
+      color: #FFFFFF; /* Color de texto */
+      background-color: #222222; /* Color de fondo */
+      padding: 10px; /* Espaciado interno */
+    }
+  </style>
+</head>
 
 <body>
   {% include navbar.html %}
 
+  <!-- Tabla de etiquetas -->
   <table class="table-tags">
     <thead class="thead-dark">
       <tr>
@@ -21,12 +35,7 @@ title: Etiquetas
       {% for tag in site.tags %}
       <tr>
         <td>
-          <a href="{{ '/tags/' | relative_url }}{{ tag[0] | slugify }}">{{ tag[0] }}</a>
-          <ul>
-            {% for post in tag[1] %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-            {% endfor %}
-          </ul>
+          <a href="#{{ tag[0] | slugify }}">{{ tag[0] }}</a>
         </td>
         <td>{{ tag[1] | size }}</td>
       </tr>
@@ -34,8 +43,41 @@ title: Etiquetas
     </tbody>
   </table>
 
-  <!-- Incluye otros scripts o estilos personalizados si es necesario -->
+  <section class="hero is-fullheight" id="blog">
+    <div class="hero-body">
+      <div class="container">
+      </div>
+    </div>
+    <div id="results-container"></div>
+    <!--Blog Cards Section-->
+    {% for tag in site.tags %}
+    <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
+    {% for post in tag[1] %}
+    {% include blog-card.html %}
+    {% endfor %}
+    {% endfor %}
+  </section>
 
+  <script>
+    // Función para desplazarse a la sección correspondiente al hacer clic en una etiqueta
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Asignar evento de clic a todas las etiquetas
+    const tags = document.querySelectorAll('.table-tags a');
+    tags.forEach((tag) => {
+      tag.addEventListener('click', (event) => {
+        event.preventDefault();
+        const sectionId = tag.getAttribute('href').substring(1);
+        scrollToSection(sectionId);
+      });
+    });
+  </script>
 </body>
 
 </html>
+
