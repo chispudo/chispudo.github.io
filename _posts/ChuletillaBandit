@@ -1,0 +1,118 @@
+---
+title: Bandit Overthewiregames "Chuletillas"
+layout: post
+post-image: /assets/images/Post/P18/P0.jpg
+description: Post que trata de proveer información básica para enfrentar los retos bandit
+tags:
+- BANDIT
+
+---
+
+Este post tendrá información acerca de los juegos de guerra o mejor conocido como [OverTheWireGames](https://overthewire.org/wargames/bandit/) en especifíco de los juegos bandit (bandido).
+Esa página proporciona una base muy buena sobre conceptos de linux, en los que tendrás que enfrentarte a ciertos desafíos. Puedes visitar el enlace anterior para más información.
+
+Con respecto al post tendrá información que te puede ayudar a resolver o a conocer algunos coneptos básicos a la hora de enfrentarte a sus desafíos.
+
+# ssh
+
+SSH (Secure Shell) es un protocolo de red seguro utilizado para la administración remota de sistemas y el intercambio seguro de datos.
+
+En el contexto de la ciberseguridad SSH se suele utilizar para realizar pruebas de penetración y evaluaciones de seguridad en sistemas remotos. Permite identificar vulnerabilidades y realizar ataques controlados.
+
+### Conectarse por ssh
+
+Hay varias formas dependiendo del la situación, te mostraré todas las que conozco hasta el momento:
+
+- Conexión por dirección IP.
+
+```shell
+# Sintaxis
+ssh usuario@direcciónIP:[puerto]
+# Ejemplo
+ssh user@192.168.0.1:8080
+# Otro ejemplo
+ssh frijol@192.168.1.6:22
+```
+- Conexión por servidor remoto y dominio.
+
+```shell
+# Sintaxis
+ssh servidor@dominio.com -p [puerto]
+# Ejemplo
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+```
+- Por claves privadas **clave.sshkey**.
+
+```shell
+# Sintaxis
+ssh -i clave_privada usuario@direccion_servidor
+```
+
+- Por conexión automática. En este caso es necesario especificar la contraseña correspondiente al usuario y que se utilizará para la autenticación.
+
+```shell
+# Sintaxis
+sshpas -p 'contraseña' shh servidor@dominio.com -p [puerto]
+# Ejemplo
+sshpass -p 'cat bandit2' ssh bandit2@bandit.labs.overthewire.org -p 2220
+```
+--- 
+
+# Base64
+
+Base 64 no es un método de encriptación de datos más bien es una codificación. Una codificación consiste en transformar un carácter del alfabeto a otro lenguaje.
+
+## Propósito de base64
+
+Base64 utiliza la codifiación de datos binarios (como imágenes o archivos) a texto con el propósito de que la transferencia de los mismos se puedan realizar en canales que solo admiten texto, esto se hacen en medios que no puedan manejar datos binarios.
+
+> Para que estos datos se puedan almacenar en el ordenador y que puedan interpretarlos se deben convertir a formato binario “bytes.
+
+### Codificar y decodificar base64 en la terminal
+
+Para codificar se utiliza **base64**.
+
+```shell
+echo gmichet | base64
+Z21pY2hldAo=
+```
+- Para decodificar se agrega un **-d** al final:
+
+```shell
+echo Z21pY2hldAo= | base64 -d
+gmichet
+```
+- Otro ejemplo pero con un archivo:
+
+```shell
+bandit?@bandit:~$ cat data.txt 
+VGhlIHBhc3N3b3JkIGlzIDZ6UGV6aUxkUjJSS05kTllGTmI2blZDS3pwaGxYSEJNCg==
+bandit?@bandit:~$ cat data.txt | base64 -d
+The password is 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+```
+.
+
+La mayoría de la codificación base64 se puede reconocer por agregar al final el signo = esto se debe a que el signo elimina el relleno.
+
+---
+
+# ROT13
+
+El primer cifrado conocido (un cifrado por sustitución) fue usado por Julio César alrededor del año 58 AC. Ahora se conoce como el cifrado César.
+
+Para aplicar ROT13 en Bash, se puede utilizar el comando **tr** (translate), que se utiliza para traducir o reemplazar caracteres. En el caso de ROT13, se puede traducir cada letra en el alfabeto a su equivalente ROT13.
+
+#### Cifrar y Descifrar el ROT13 en Bash
+
+```shell
+tr 'A-Za-z' 'N-ZA-Mn-za-m'
+```
+- Ejemplos:
+
+```shell
+❯ echo "Hola mundo" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+Ubyn zhaqb
+❯ echo "Ubyn zhaqb" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+Hola mundo
+```
+---

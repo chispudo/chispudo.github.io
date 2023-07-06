@@ -1,12 +1,12 @@
 body {
-  background-color: #15171a; // Reemplaza el valor con el color de fondo deseado
+  background-color: #000000; // Reemplaza el valor con el color de fondo deseado
 }
 .content span {
-  color: green; /* Reemplaza "red" con el color deseado */
+  color: red; /* Reemplaza "red" con el color deseado */
 }
 strong {
   font-weight: bold;
-  color: green; /* Cambia "green" por el color deseado */
+  color: red; /* Cambia "green" por el color deseado */
 }
 .post-container {
   text-align: center; /* Alinea el texto al centro del contenedor */
@@ -14,22 +14,25 @@ strong {
   padding-right: 25%; /* Añade un espacio en blanco a la derecha */
 }
 .table-tags {
-  width: 80%;
-  max-width: 800px; /* Ajusta el ancho máximo deseado */
-  margin: 50px auto; /* Ajusta los márgenes superiores e inferiores y el valor "auto" para centrar la tabla horizontalmente */
+  width: 60%;
+  max-width: 600px;
+  margin: 50px auto 50px auto;
   border-collapse: collapse;
+  font-size: 14px;
+  background-color: #000000;
 }
 .table-tags th {
-  background-color: #222222;
-  color: #FFFFFF;
-  padding: 15px;
-  text-align: left;
+  background-color: #00FF00;
+  color: #000000;
+  padding: 10px;
+  text-align: center;
   font-weight: bold;
   border-bottom: 2px solid #FFFFFF;
 }
 .table-tags td {
-  padding: 15px;
-  border-bottom: 1px solid #333333;
+  padding: 10px;
+  border-bottom: 1px solid #00FF00;
+  text-align: center;
 }
 .table-tags tr:nth-child(even) {
   background-color: #111111;
@@ -38,27 +41,21 @@ strong {
   background-color: #333333;
 }
 .table-tags a {
-  color: #FFFFFF;
+  color: #00FF00;
   text-decoration: none;
 }
 .table-tags a:hover {
   text-decoration: underline;
 }
 .table-tags {
-  margin-bottom: 0; /* Ajusta el margen inferior a 0 */
+  margin-bottom: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
+.table-tags thead {
+  background-color: #222222;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
 
 
