@@ -32,7 +32,7 @@ chmod +t directorio/
 **Retirar Permiso Sticky bit**
 
 ```shell
-chmod +t directorio/
+chmod -t directorio/
 ```
 ---
 

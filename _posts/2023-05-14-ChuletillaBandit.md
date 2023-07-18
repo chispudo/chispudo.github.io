@@ -15,13 +15,28 @@ Con respecto al post tendrá información que te puede ayudar a resolver o a con
 
 > No resolvere los desafíos más bien te enseñare algunas técnicas que necesitas de saber antes de empezar a jugar.
 
+### Indice
+
+- [¿Qué es ssh?](#ssh)
+- [Conexiones por ssh](#conectarse-por-ssh)
+- [Comandos de ayuda en linux](#conceptos-básicos)
+- [Búsquedas rápidas con find](#búsquedas-con-find)
+ - [Ejemplos búsquedas simples con find](#práctica-búsquedas-simples)
+ - [Opción -exec en find](#opción-exec)
+- [Buscar dentro de archivos](#uso-básico-del-comando-grep)
+- [Método de codificación base64](#base64)
+- [Cifrado César ROT13](#rot13)
+- [Openssl](#openssl)
+- [Conclusión](#conclusión-final)
+
+
 # ssh
 
 SSH (Secure Shell) es un protocolo de red seguro utilizado para la administración remota de sistemas y el intercambio seguro de datos.
 
 En el contexto de la ciberseguridad SSH se suele utilizar para realizar pruebas de penetración y evaluaciones de seguridad en sistemas remotos. Permite identificar vulnerabilidades y realizar ataques controlados.
 
-### Conectarse por ssh
+### Conectarse-por-ssh
 
 Hay varias formas dependiendo del la situación, te mostraré todas las que conozco hasta el momento:
 
@@ -60,7 +75,7 @@ sshpass -p 'cat bandit2' ssh bandit2@bandit.labs.overthewire.org -p 2220
 ```
 --- 
 
-# Conceptos básicos 
+# Conceptos-básicos 
 
 A continuación una lista de comandos que te pueden servir al momento de resolver los desafíos de bandido.
 
@@ -252,7 +267,7 @@ find [ruta] [opciones]
 
 ![P18i0](/assets/images/Post/P18/P18i0.png)
 
-### Práctica / búsquedas simples
+### Práctica búsquedas simples
 
 Buscando un directorio por nombre poemas desde el directorio raíz (2❯ /dev/null) se utiliza para evitar que te salgan mensajes de error.
 
@@ -284,7 +299,7 @@ Buscando un directorio por nombre poemas desde el directorio raíz (2❯ /dev/nu
 $ find . -name ".*" -maxdepth 1 ./.hidden_file
 ```
 
-### Opción -exec
+### Opción exec
 
 Se basa en la ejecución de cualquier comando en todos los elementos que encontro previamente el find.
 
