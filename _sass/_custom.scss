@@ -13,6 +13,12 @@ strong {
   padding-left: 5%; /* Añade un espacio en blanco a la izquierda */
   padding-right: 25%; /* Añade un espacio en blanco a la derecha */
 }
+.highlight {
+  border: 1px solid #8B6CEF; /* Cambiar el color del borde */
+  border-radius: 10px; /* Hacer las esquinas redondeadas */
+  padding: 3px; /* Agregar un poco de espacio entre el borde y el código */
+  background-color: #8B6CEF; /* Cambiar el color de fondo */
+}
 .table-tags {
   width: 40%;
   max-width: 400px;
