@@ -80,6 +80,6 @@ Antes:   rwxr-xrw-
 Después: rwxrw-r-x
 ``` 
 
-De esta forma podemos asignar permisos a directorios o archivos pero también se puede en el formato simbólico como en este post [Cambiar Permisos de Archivos y Directorios](https://chispudo.github.io/blog/Chmod)
+De esta forma podemos asignar permisos a directorios o archivos pero también se puede en el formato simbólico como en este post [Cambiar Permisos de Archivos y Directorios](https://mechitast.github.io/blog/Chmod)
 
 
