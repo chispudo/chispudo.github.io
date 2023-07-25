@@ -24,6 +24,8 @@ Nmap por sus siglas Network Mapper (Mapeador de Red), es una herramienta que per
 - [Escaneo UDP](#escaneo-udp)
 - [Escaneo TCP](#escaneo-tcp-connect)
 - [Escaneo ACK](#escaneo-ack)
+- [Resumen escaneos utilizados y más ejemplos](#resumen-escaneos-utilizados)
+- [Escaneo sin DNS y explicación](#resolución-dns-sistema-de-nombres-de-dominio)
 
 ---
 
@@ -58,7 +60,7 @@ nmap --help
 ```
 ---
 
-### Descubrimiento de host en la red
+## Descubrimiento de host en la red
 
 Para escanear los host de la red local es de la siguiente forma:
 
@@ -106,31 +108,24 @@ Los puertos TCP y UDP se numeran del 0 al 65,535. Los primeros 1,024 puertos (de
 
 ### Repaso-Handshake
 
-1. **Paso 1: Envío del SYN (Synchronize):**
+1. Paso 1: Envío del **SYN (Synchronize):**
 El cliente envía un paquete SYN al servidor para iniciar una conexión.
 
-2. **Paso 2: Envío del SYN-ACK (Synchronize-Acknowledge):**
+2. Paso 2: Envío del **SYN-ACK (Synchronize-Acknowledge):**
  Si el servidor está dispuesto a aceptar la conexión, responde con un paquete SYN-ACK al cliente.
 
-3. **Paso 3: Envío del ACK (Acknowledge):**
+3. Paso 3: Envío del **ACK (Acknowledge):**
 Finalmente, el cliente responde con un paquete ACK al servidor, y la conexión se considera "abierta" y lista para transferir datos.
 
 ![P17i2](/assets/images/Post/P17/P17i3.png)
+
+[Más información](https://mechitast.github.io/blog/TCP-IP)
 
 ---
 
 ### Puertos
 
-
-- **Abierto (Open)**: Indica que el puerto está aceptando conexiones y hay un servicio o aplicación que está escuchando en ese puerto.
-
-- **Cerrado (Closed)**: Indica que el puerto está cerrado y no hay ningún servicio escuchando en ese puerto. Sin embargo, el host remoto ha enviado una respuesta de tipo "RST" (reset) para indicar que el puerto está cerrado.
-
-- **Filtrado (Filtered)**: Indica que el puerto está protegido por un firewall u otro dispositivo de seguridad y Nmap no pudo determinar si el puerto está abierto o cerrado. Esto puede indicar que el puerto está bloqueado o que el host no respondió a los paquetes de sondeo.
-
-- **Abierto/Filtrado (Open/Filtered)**: Indica que Nmap no pudo determinar si el puerto está abierto o filtrado debido a la falta de respuesta del host escaneado.
-
-- **Cerrado/Filtrado (Closed/Filtered)**: Indica que Nmap no pudo determinar si el puerto está cerrado o filtrado debido a la falta de respuesta del host escaneado. El estado "Cerrado" en Nmap puede implicar el envío de paquetes de tipo "RST" por parte del host remoto, lo que indica que el puerto está cerrado y no hay ningún servicio escuchando en ese puerto.
+![P17i2](/assets/images/Post/P17/P17i6.png)
 
 ---
 
@@ -138,7 +133,7 @@ Finalmente, el cliente responde con un paquete ACK al servidor, y la conexión s
 
 Para ver el funcionamiento a detalle de los distintos escaneos utilizarmos Wireshark.
 
-Wireshark es un **analizador de paquetes de red**, una utilidad que captura todo tipo de información que pasa a través de una conexión.
+Wireshark es un _analizador de paquetes de red_, una utilidad que captura todo tipo de información que pasa a través de una conexión.
 
 #### 1 Herramienta tcpdump
 
@@ -148,7 +143,7 @@ Herramienta de línea de comandos que permite capturar y mostrar paquetes de red
 
 primero necesitamos localizar la interfaz de red:
 
-* Para encontrar la interfaz de red adecuada, puedes usar el comando `ip addr show` o `ifconfig`. La interfaz de red suele tener nombres como eth0, enp0s3, wlan0, entre otros.
+* Para encontrar la interfaz de red adecuada, puedes usar el comando ip addr show o ifconfig. La interfaz de red suele tener nombres como eth0, enp0s3, wlan0, entre otros.
 
 #### 2 Realizar la captura con tcpdump
 
@@ -161,12 +156,12 @@ tcpdump -i <interfaz> -w Captura.cap -v
 
 #### 3 Realizar escaneo 
 
-En este escaneo especifico el puerto a escanear **-p80** del objetivo:
+En este escaneo especifico el puerto a escanear _-p80_ del objetivo:
 
 ```shell
 sudo nmap -sS -p80 192.168.0.22
 ```
-- A si mismo detenemos la captura al momente de que el escaneo finalice puedes presionar `Ctrl + c` en la ventana del terminal donde se está ejecutando TCPDUMP. 
+- A si mismo detenemos la captura al momento de que el escaneo finalice, puedes presionar _Ctrl + c_ en la ventana del terminal donde se está ejecutando TCPDUMP para terminar el proceso. 
 
 #### Abrir Wireshark
 
@@ -186,9 +181,11 @@ Realiza un escaneo Stealth (sigiloso) utilizando TCP SYN.
 Nmap enviará paquetes `SYN` para identificar puertos abiertos en los hosts. 
 
 **Abierto**
+
 Si el puerto está abierto, el host debería responder con un paquete SYN-ACK. 
 
 **Cerrado**
+
 Si el puerto está cerrado, el host responderá con un paquete RST (reset). 
 
 ```shell
@@ -207,16 +204,16 @@ Nmap done: 1 IP address (1 host up) scanned in 5.74 seconds
 
 **Análizando la Captura con Wireshark**
 
-El puerto esta abierto debido a que envío un (SYN) y luego recibo un reconocimiento (SYN-ACK) e inmediatamente se restablece (RST).
+El puerto esta abierto porque al momento de enviar un (SYN) nos dieron como respuesta un recibo un reconocimiento (SYN-ACK) e inmediatamente respondemos con un (RST).
 
-
+* RST: Se utiliza para reiniciar la conexión.
 
 ![P17i2](/assets/images/Post/P17/sS.png)
 
 **Interpretación general:**
 
 1. El host objetivo respondió con un paquete SYN, ACK, lo que indica que el puerto está abierto y en escucha.
-2. El host objetivo respondió con un paquete RST, lo que indica que el puerto está cerrado porque reinicio la conexión.
+2. Nosotros respondimos con un paquete RST, lo que indica reinicio de conexión.
 
 ![P17i2](/assets/images/Post/P17/Escaneo_sS_wireshark.png)
 
@@ -261,9 +258,11 @@ Un resultado común que podrías esperar es la respuesta ICMP "Destination unrea
 Nmap intentará establecer una conexión completa con los puertos para determinar si están abiertos o cerrados.
 
 **Puerto Abierto**
+
 Si el puerto está abierto y escuchando, se establecerá una conexión y Nmap cerrará la conexión de manera ordenada.
 
 **Puerto Cerrado**
+
 Si el puerto está cerrado, el sistema enviará un paquete de respuesta de "conn-refused" (conexión rechazada) indicando que el puerto está cerrado.
 
 ```shell
@@ -288,7 +287,7 @@ Nmap done: 1 IP address (1 host up) scanned in 5.64 seconds
 
 **Análizando la Captura con Wireshark**
 
-Esta es una conexión completa un apretón de manos (handshake) y al final enviamos un reincio.
+Esta es una conexión completa un apretón de manos (handshake) y al final enviamos un reincio. Se logró todo el proceso Handshake ejemplo:
 
 - Pepito - Hola Vera estas ahi?
 - Vera   - Si estoy aqui? 
@@ -304,12 +303,15 @@ Esta es una conexión completa un apretón de manos (handshake) y al final envia
 Utilizado para realizar un escaneo de envío de paquete de análisis (ACK Scan) en Nmap. Este tipo de escaneo aprovecha el comportamiento del protocolo TCP para identificar el estado de los puertos en un host objetivo.
 
 **Funcionamiento:**
+
 Cuando Nmap realiza un escaneo ACK (`-sA`), envía paquetes con el indicador ACK activado a los puertos específicos del host objetivo.
 
 **Puerto Filtrado**
+
 Si el puerto está filtrado por un firewall o dispositivo de seguridad, el host responderá con un paquete de tipo "reset" (RST), lo que indica que el puerto está filtrado.
 
 **Puerto Cerrado o Abierto**
+
 Si el puerto está cerrado o abierto, el host simplemente ignorará el paquete ACK y no enviará ninguna respuesta, lo que dificulta la determinación del estado real del puerto mediante este tipo de escaneo.
 
 ```shell
@@ -349,5 +351,162 @@ Si el puerto está filtrado por un firewall o dispositivo de seguridad, el host 
 
 ### Resumen escaneos utilizados
 
+Ya conocimos como hacer escaneos sencillos en nmap, además de esos escaneos podemos agregar más parámetros dependiendo el objetivo.
+
 ![P17i2](/assets/images/Post/P17/P17i4.png)
 
+Algunos ejemplos de parámetros útiles en nmap son los siguientes:
+
+**NOTA**
+
+Puedes colocar las opciones generales al principio del comando, seguidas de la opción del tipo de escaneo.
+
+![P17i7](/assets/images/Post/P17/P17i7.png)
+
+**EJEMPLOS:**
+
+- Escaneo en los puertos 80 y 22 para detectar versiones y servicios que corren en esos puertos, además le indico la velocidad del escaneo:
+
+```shell
+❯ sudo nmap -p 80,22 -sV 192.168.0.22 -T5
+[sudo] password for frijol: 
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-07-24 17:11 CST
+Nmap scan report for 192.168.0.22
+Host is up (0.00024s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+80/tcp open  http    Apache httpd 2.4.38 ((Debian))
+MAC Address: 08:00:27:CA:7D:13 (Oracle VirtualBox virtual NIC)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 12.83 seconds
+```
+---
+
+- Escaneando según número de puertos especifícos: escaneará los primeros 1020 puertos más comunes.
+
+```shell
+❯ sudo nmap -p 1-1024 -sT 192.168.0.22 -n
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-07-24 17:20 CST
+Nmap scan report for 192.168.0.22
+Host is up (0.00032s latency).
+Not shown: 1022 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+MAC Address: 08:00:27:CA:7D:13 (Oracle VirtualBox virtual NIC)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.11 seconds
+```
+---
+
+## Resolución DNS (Sistema de nombres de dominio)
+
+Organiza e identifica dominios. Como las direcciones IP asociadas a los mismos.
+
+Ejemplo
+
+El comando 'nslookup' se utiliza para realizar consultas DNS (Domain Name System) y obtener información sobre los nombres de dominio, como las direcciones IP asociadas a ellos.
+
+![P17i8](/assets/images/Post/P17/P17i8.png)
+
+Explicación:
+
+![P17i9](/assets/images/Post/P17/P17i9.png)
+
+El Sistema de Nombres de Dominio (DNS) actúa como un traductor que permite traducir los nombres de dominio, como "[www.sitio.com](http://www.sitio.com/)", en direcciones IP reales, como "182.56.546.etc".
+
+![DNS2](/assets/images/Post/P17/P17i10.png)
+
+- Escaneando sin resolución DNS, opción **-n** con esto le indicamos que el escaneo no incluya resolución DNS. 
+
+```shell
+❯ sudo nmap -F -sS 192.168.0.22 -n 
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-07-24 17:58 CST
+Nmap scan report for 192.168.0.22
+Host is up (0.00013s latency).
+Not shown: 98 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+MAC Address: 08:00:27:CA:7D:13 (Oracle VirtualBox virtual NIC)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.14 seconds
+```
+---
+
+* Escaneando por los puertos más comunes: En este caso le decimos los 300 puertos comunes y abiertos. Aparte con el parámetro **-v** le indico que me muestre los resultados que encuentre por pantalla
+
+```shell
+❯ sudo nmap --top-ports 300 --open 192.168.0.1/24 -v -T5
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-07-24 18:02 CST
+Initiating ARP Ping Scan at 18:02
+Scanning 255 hosts [1 port/host]
+Completed ARP Ping Scan at 18:02, 3.58s elapsed (255 total hosts)
+Initiating Parallel DNS resolution of 9 hosts. at 18:02
+Completed Parallel DNS resolution of 9 hosts. at 18:02, 5.53s elapsed
+Initiating Parallel DNS resolution of 1 host. at 18:02
+Completed Parallel DNS resolution of 1 host. at 18:02, 5.51s elapsed
+Initiating SYN Stealth Scan at 18:02
+Scanning 10 hosts [300 ports/host]
+Discovered open port 443/tcp on 192.168.0.1
+Discovered open port 80/tcp on 192.168.0.22
+Discovered open port 80/tcp on 192.168.0.1
+Discovered open port 22/tcp on 192.168.0.22
+Completed SYN Stealth Scan against 192.168.0.22 in 0.51s (9 hosts left)
+Completed SYN Stealth Scan against 192.168.0.252 in 0.52s (8 hosts left)
+Completed SYN Stealth Scan against 192.168.0.2 in 0.53s (7 hosts left)
+Completed SYN Stealth Scan against 192.168.0.8 in 0.53s (6 hosts left)
+Discovered open port 8080/tcp on 192.168.0.16
+Discovered open port 8002/tcp on 192.168.0.16
+Discovered open port 5000/tcp on 192.168.0.1
+Completed SYN Stealth Scan against 192.168.0.16 in 1.58s (5 hosts left)
+Completed SYN Stealth Scan against 192.168.0.6 in 1.87s (4 hosts left)
+Completed SYN Stealth Scan against 192.168.0.10 in 1.89s (3 hosts left)
+Completed SYN Stealth Scan against 192.168.0.15 in 2.02s (2 hosts left)
+Completed SYN Stealth Scan against 192.168.0.1 in 4.88s (1 host left)
+Completed SYN Stealth Scan at 18:02, 5.60s elapsed (3000 total ports)
+Nmap scan report for 192.168.0.1
+Host is up (0.013s latency).
+Not shown: 162 filtered tcp ports (no-response), 135 closed tcp ports (reset)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT     STATE SERVICE
+80/tcp   open  http
+443/tcp  open  https
+5000/tcp open  upnp
+MAC Address: Unknown (Unknown)
+
+Nmap scan report for 192.168.0.16
+Host is up (0.0063s latency).
+Not shown: 298 closed tcp ports (reset)
+PORT     STATE SERVICE
+8002/tcp open  teradataordbms
+8080/tcp open  http-proxy
+MAC Address: Unknown (Unknown)
+
+Nmap scan report for 192.168.0.22
+Host is up (0.00011s latency).
+Not shown: 298 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+MAC Address: 08:00:27:CA:7D:13 (Oracle VirtualBox virtual NIC)
+
+Initiating SYN Stealth Scan at 18:02
+Scanning 192.168.0.9 [300 ports]
+Completed SYN Stealth Scan at 18:02, 0.03s elapsed (300 total ports)
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 256 IP addresses (11 hosts up) scanned in 20.39 seconds
+           Raw packets sent: 4818 (203.848KB) | Rcvd: 2855 (115.224KB)
+```
+
+---
+
+Bueno ahora ya conoces como hacer escaneos con nmap, siempre utiliza lo aprendido con fines éticos y con autorización del propietario de la red. 
+Te recomiendo practicar con tu router.
+
+Nos vemos en el siguiente post.
