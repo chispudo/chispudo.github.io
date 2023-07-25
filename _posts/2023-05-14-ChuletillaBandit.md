@@ -4,7 +4,7 @@ layout: post
 post-image: /assets/images/Post/P8/P8.png
 description: Comó enfrentar los retos bandit y no morir en el intento.
 tags:
-- BANDIT
+- LINUX
 
 ---
 
