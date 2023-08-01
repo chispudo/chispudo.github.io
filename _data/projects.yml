@@ -1,8 +1,8 @@
-- name: Primer Proyecto
+- name: Generador de Contraseñas Aleatorias
 #  image: https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_960_720.jpg
-  image: /assets/images/Post/Proyects/Proyects.png
-  link:
-  description: Próximamente...
+  image: /assets/images/Post/Proyects/PR1.jpg
+  link: https://github.com/Gmichet/random_password
+  description: Script en Python que genera contraseñas aleatorias.
 
 - name: Segundo Proyecto
   link:
