@@ -1,0 +1,47 @@
+- name: LINUX
+  posts:
+    - title: Lectura de Permisos
+      link: https://mechitast.github.io/blog/Lectura-Permisos
+    - title: Chmod
+      link: https://mechitast.github.io/blog/Chmod
+    - title: Asignación de Permisos método numérico
+      link: https://mechitast.github.io/blog/Asignar-Permisos-Num
+    - title: Permisos Especiales SUID
+      link: https://mechitast.github.io/blog/SUID
+    - title: Permisos Especiales SGID
+      link: https://mechitast.github.io/blog/SGID
+    - title: Permisos Especiales Sticky Bit
+      link: https://mechitast.github.io/blog/Stickybit
+    - title: Creación de usuarios y grupos
+      link: http://mechitast.github.io/blog/Usuarios-grupos
+
+- name: REDES
+  posts:
+    - title: Qué es una Dirección IP
+      link: https://mechitast.github.io/blog/Direcci%C3%B3nIP
+    - title: Como se compone una Dirección IP
+      link: https://mechitast.github.io/blog/Estructura-IP
+    - title: Procotocolo TCP y Protocolo IP
+      link: https://mechitast.github.io/blog/TCP-IP
+    - title: Entendiendo el Modelo TCP/IP
+      link: https://mechitast.github.io/blog/MTCPIP
+    - title: Qué es una Dirección MAC
+      link: https://mechitast.github.io/blog/MAC
+    - title: Qué es una base de datos relacional e instalación con Mysql
+      link: https://mechitast.github.io/blog/SQL
+    - title: Uso de consultas básicas SQL
+      link: https://mechitast.github.io/blog/Uso-SQL
+
+- name: CTF
+  posts:
+    - title: Introducción a los juegos bandit
+      link: https://mechitast.github.io/blog/ChuletillaBandit
+
+- name: HERRAMIENTAS
+  posts:
+    - title: Nmap
+      link: https://mechitast.github.io/blog/Nmap-Fundamentos
+    - title: Wfuzz
+      link: https://mechitast.github.io/blog/Wfuzz
+
+

@@ -1,0 +1,129 @@
+---
+title: Máquina Shop VulNyx
+layout: post
+post-image: /assets/images/Post/P10/Shop.png
+description: Vulneración de máquina "Shop" de la página VulNyx
+tags:
+- VULNYX
+
+---
+
+Técnicas utilizadas para resolver la máquina:
+
+- Nmap
+- Wfuzz
+- SQLi
+- SSH
+- Escalada de privilegios
+
+
+
+
+
+### Indice
+
+- [Reconocimiento](#reconocimiento)
+
+
+# Reconocimiento
+
+---
+
+#### Escaneando puertos abiertos
+
+Empezamos la máquina escaneando puertos abiertos:
+
+```shell
+❯ sudo nmap -sS -p- 192.168.0.22 -n      
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-08-14 15:24 CST
+Nmap scan report for 192.168.0.22
+Host is up (0.00066s latency).
+Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+Nmap done: 1 IP address (1 host up) scanned in 2.76 seconds
+```
+.
+
+#### Escaneo de versiones con scripts de nmap 
+
+Ahora que conocemos que puertos estan abiertos podemos tratar de detectar la versión y el servicio que corren.
+
+```shell
+❯ sudo nmap -sCV -p22,80 192.168.0.22 -n -T5
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-08-14 15:22 CST
+Nmap scan report for 192.168.0.22
+Host is up (0.00061s latency).
+Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 ce2421a92a9e702a50aed3d431ab01ba (RSA)
+|   256 6b653b41b3630b12bad369ac14de397f (ECDSA)
+|_  256 04cbd99b40cc2858fc03e74ff76ae572 (ED25519)
+80/tcp open  http    Apache httpd 2.4.38 ((Debian))
+|_http-title: VulNyx Shop
+|_http-server-header: Apache/2.4.38 (Debian)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 9.55 seconds
+```
+.
+
+Revisamos el puerto 80 que esta abierto y corriendo el servicio http.
+
+![http](/assets/images/Post/P10/http.png)
+
+#### Fuzzing y enumeraición
+
+Ahora teniendo la ruta http://192.168.0.22/ intentare hacerle **fuzzing** para encontrar rutas o recursos ocultos.
+
+```shell
+❯ sudo wfuzz -c --hc=404 -w /home/mechitast/Tools/SecLists/Discovery/DNS/subdomains-top1million-110000.txt "http://192.168.0.22/FUZZ"
+[sudo] contraseña para mechitast: 
+********************************************************
+* Wfuzz 3.1.0 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://192.168.0.22/FUZZ
+Total requests: 114441
+
+=====================================================================
+ID           Response   Lines    Word       Chars       Payload                                                                                                                      
+=====================================================================
+
+000000406:   301        9 L      28 W       310 Ch      "css"                                                                                                                        
+000000454:   301        9 L      28 W       309 Ch      "js"                                                                                                                         
+000007602:   301        9 L      28 W       320 Ch      "administrator"                                                                                                              
+000009532:   200        121 L    247 W      3531 Ch     "#www"                                                                                                                       
+000010581:   200        121 L    247 W      3531 Ch     "#mail"                                                                                                                      
+000030699:   301        9 L      28 W       312 Ch      "fonts"                                                                                                                      
+000047706:   200        121 L    247 W      3531 Ch     "#smtp"                                                                                                                      
+000103135:   200        121 L    247 W      3531 Ch     "#pop3"                                                                                                                      
+
+Total time: 0
+Processed Requests: 114441
+Filtered Requests: 114433
+Requests/sec.: 0
+```
+.
+
+Accedemos a la ruta **http:/192.168.0.22/administrator**
+
+![Admin](/assets/images/Post/P10/administrator.png)
+
+#### Interceptando la comunicación
+
+Con la aplicación **Caido** interceptaré la petición por medio de un proxy, de paso lo mando al repeater para probar diferentes métodos de SQLi.
+
+![Admin](/assets/images/Post/P10/replay.png)
+
+
+
+
+
+
+

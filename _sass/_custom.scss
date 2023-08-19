@@ -6,7 +6,7 @@ body {
 }
 strong {
   font-weight: bold;
-  color: red; /* Cambia "green" por el color deseado */
+  color: #6C71C4; /* Cambia "green" por el color deseado */
 }
 .post-container {
   text-align: center; /* Alinea el texto al centro del contenedor */
@@ -14,8 +14,8 @@ strong {
   padding-right: 25%; /* Añade un espacio en blanco a la derecha */
 }
 .highlight {
-  border: 1px solid #8B6CEF; /* Cambiar el color del borde */
-  border-radius: 10px; /* Hacer las esquinas redondeadas */
+  border: 1px solid #111827; /* Cambiar el color del borde */
+  border-radius: 8px; /* Hacer las esquinas redondeadas */
   padding: 3px; /* Agregar un poco de espacio entre el borde y el código */
   background-color: #8B6CEF; /* Cambiar el color de fondo */
 }
@@ -41,7 +41,7 @@ strong {
   text-align: center;
 }
 .table-tags tr:nth-child(even) {
-  background-color: #111111;
+  background-color: #111827;
 }
 .table-tags tr:hover {
   background-color: #333333;
@@ -63,7 +63,42 @@ strong {
   padding: 10px;
   text-align: center;
 }
-
+.category-buttons {
+  display: flex;
+  gap: 10px;
+}
+.category-button {
+  background-color: #111827; /* Color de ejemplo para Linux */
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.category-table {
+  margin: 20px 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+.category-table td {
+  padding: 10px;
+  border: none;
+  color: #00FF00; /* Texto verde */
+}
+.category-table tr:nth-child(odd) td {
+  background-color: #000000; /* Negro */
+}
+.category-table tr:nth-child(even) td {
+  background-color: #111827; /* Gris oscuro */
+}
+.category-table a {
+  color: #00FF00; /* Enlace verde */
+  text-decoration: none;
+}
+.category-table a:hover {
+  text-decoration: underline;
+}
 
 
 
