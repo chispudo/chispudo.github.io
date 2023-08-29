@@ -34,8 +34,14 @@
 
 - name: CTF
   posts:
-    - title: Introducción a los juegos bandit
-      link: https://mechitast.github.io/blog/ChuletillaBandit
+    - title: Bandit 0 -–❯ 5
+      link: https://mechitast.github.io/blog/Bandit0-5
+    - title: Bandit 6 -–❯ 10 
+      link: https://mechitast.github.io/blog/Bandit6-10
+    - title: Bandit 11 -–❯ 15
+      link: https://mechitast.github.io/blog/Bandit11-15
+    - title: Bandit 16 -–❯ 20
+      link: https://mechitast.github.io/blog/Bandit16-20
 
 - name: HERRAMIENTAS
   posts:

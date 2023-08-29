@@ -80,29 +80,26 @@ strong {
   margin: 20px 0;
   width: 100%;
   border-collapse: collapse;
+  background-color: #282a36; /* Fondo púrpura oscuro */
+  color: #f8f8f2; /* Texto blanco/gris claro */
+  border: 1px solid #44475a; /* Borde gris más claro */
 }
 .category-table td {
   padding: 10px;
   border: none;
-  color: #00FF00; /* Texto verde */
 }
 .category-table tr:nth-child(odd) td {
-  background-color: #000000; /* Negro */
+  background-color: #111827; /* Fondo gris más oscuro para filas impares */
 }
 .category-table tr:nth-child(even) td {
-  background-color: #111827; /* Gris oscuro */
+  background-color: #383a4a; /* Fondo púrpura oscuro para filas pares */
 }
 .category-table a {
-  color: #00FF00; /* Enlace verde */
+  color: #50fa7b; /* Enlace verde */
   text-decoration: none;
 }
 .category-table a:hover {
   text-decoration: underline;
 }
-
-
-
-
-
 
 
