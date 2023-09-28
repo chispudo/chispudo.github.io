@@ -1,7 +1,7 @@
 ---
 title: Uso básico nmap
 layout: post
-post-image: /assets/images/Post/P17/P17i0.png
+post-image: /assets/images/Post/P17/P17.png
 description: Nmap herramienta muy útil al momento de realizar un reconocimiento
 tags:
 - TOOLS

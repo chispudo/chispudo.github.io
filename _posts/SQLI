@@ -1,0 +1,33 @@
+---
+title: SQLI
+layout: post
+post-image: /assets/images/Post/P19/SQLInjection.png
+description: Vulnerabilidad para interferir con las consultas SQL del back-end
+tags:
+- SQLI
+
+---
+
+Una inyección SQL ocurre cuando una aplicación web permite que un atacante interactúe con la base de datos que corre por detrás. Esto sucede cuando la aplicación web no valida adecuadamente las entradas del usuario antes de incorporarlas.
+Esta vulnerabilidad permite lo siguiente:
+
+1. Recuperar datos confidenciales
+2. Modificar o eliminar datos
+3. Ejecutar comandos en el sistema
+
+![P12i1](/assets/images/Post/P19/P19i1.png)
+
+Si al realizar una inyección en un potencial vector de entrada podemos notar interacción o errores en la página web entonces hay posibilidad que sea vulnerable a sqli.
+
+### Indice
+
+
+--- 
+
+# SQLI
+
+Cuando nosostros interactuamos con una página web vulnerable a SQL injection estamos interactuando con una base de datos y al aplicar una inyección SQL estamos realizando un consulta (query).
+
+
+
+

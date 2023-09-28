@@ -32,7 +32,7 @@
     - title: Uso de consultas básicas SQL
       link: https://mechitast.github.io/blog/Uso-SQL
 
-- name: CTF
+- name: BANDIT
   posts:
     - title: Bandit 0 -–❯ 5
       link: https://mechitast.github.io/blog/Bandit0-5
@@ -53,5 +53,6 @@
       link: https://mechitast.github.io/blog/Nmap-Fundamentos
     - title: Wfuzz
       link: https://mechitast.github.io/blog/Wfuzz
+
 
 
